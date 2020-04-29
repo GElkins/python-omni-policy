@@ -102,7 +102,7 @@
             "chnort1": "Switzerland North",
             "chwest1": "Switzerland West",
             "nowest1": "Norway West",
-            "noeast1": "\u00e2\u20ac\u2039Norway East",
+            "noeast1": "\u200bNorway East",
             "escent1": "Spain Central",
             "aseast1": "East Asia",
             "assoea1": "Southeast Asia",
