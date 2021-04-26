@@ -42,8 +42,9 @@ azurerm_healthcare_service:
             notes: ''
         cors_configuration:
             description: A `cors_configuration` block as defined below.
-            required: false
-            policy: ''
+            # AC-4 Information Flow Management
+            required: true # was false
+            policy: '' #example cors_configuration != null
             notes: ''
         kind:
             description: 'The type of the service. Values at time of publication are:

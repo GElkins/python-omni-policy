@@ -52,7 +52,8 @@ azurerm_storage_account:
             notes: ''
         enable_https_traffic_only:
             description: Boolean flag which forces HTTPS if enabled, see [here](https://docs.microsoft.com/en-us/azure/storage/storage-require-secure-transfer/)
-            required: false
+            #Encryption in transit            
+            required: true #was false
             policy: ''
             notes: ''
         is_hns_enabled:
@@ -99,8 +100,9 @@ azurerm_storage_account:
             notes: ''
         cors_rule:
             description: A `cors_rule` block as defined above.
-            required: false
-            policy: ''
+            # AC-4 inforamtion Flow Enhancement
+            required: true  #was false
+            policy: ''  #example cors_rule != null
             notes: ''
         delete_retention_policy:
             description: A `delete_retention_policy` block as defined below.

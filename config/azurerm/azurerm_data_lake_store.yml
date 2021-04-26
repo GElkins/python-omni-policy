@@ -30,18 +30,19 @@ azurerm_data_lake_store:
             required: false
             policy: ''
             notes: ''
+            # Encryption At Rest
         encryption_state:
             description: Is Encryption enabled on this Data Lake Store Account? Possible
                 values are `Enabled` or `Disabled`. Defaults to `Enabled`.
-            required: false
-            policy: ''
+            required: true #was false
+            policy: 'Enabled'
             notes: ''
         encryption_type:
             description: The Encryption Type used for this Data Lake Store Account.
                 Currently can be set to `ServiceManaged` when `encryption_state` is
                 `Enabled` - and must be a blank string when it's Disabled.
             required: false
-            policy: ''
+            policy: ''  #Unable to use until bug is fixed
             notes:
             - '-> '
             - ' Support for User Managed encryption will be supported in the future

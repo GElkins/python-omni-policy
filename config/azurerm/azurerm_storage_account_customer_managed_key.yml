@@ -8,8 +8,9 @@ azurerm_storage_account_customer_managed_key:
         storage_account_id:
             description: The ID of the Storage Account. Changing this forces a new
                 resource to be created.
-            required: false
-            policy: ''
+                #require CMK on storage accounts
+            required: true  #was false
+            policy: '' #example  storage_account_id != null
             notes: ''
         key_vault_id:
             description: The ID of the Key Vault. Changing this forces a new resource

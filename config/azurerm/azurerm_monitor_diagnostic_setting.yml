@@ -8,8 +8,9 @@ azurerm_monitor_diagnostic_setting:
         name:
             description: Specifies the name of the Diagnostic Setting. Changing this
                 forces a new resource to be created.
-            required: false
-            policy: ''
+                #AU 5 Response to Audit Processing Failures
+            required: True #as False
+            policy: '' # name != null
             notes: ''
         target_resource_id:
             description: The ID of an existing Resource on which to configure Diagnostic
@@ -36,6 +37,8 @@ azurerm_monitor_diagnostic_setting:
             - ' One of `eventhub_authorization_rule_id`, `log_analytics_workspace_id`
                 and `storage_account_id` must be specified.'
         log:
+        # Need to determine what is logged or specify what needs to be logged
+        
             description: One or more `log` blocks as defined below.
             required: false
             policy: ''

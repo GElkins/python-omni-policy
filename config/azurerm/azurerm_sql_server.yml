@@ -32,14 +32,16 @@ azurerm_sql_server:
         administrator_login:
             description: The administrator login name for the new server. Changing
                 this forces a new resource to be created.
-            required: false
-            policy: ''
+                # AC-2 (7) An Azure Active Directory adminstrator must be provisionsed for SQL servers
+            required: true  #was false
+            policy: ''  #what goes here?  administrator_login != null
             notes: ''
         administrator_login_password:
             description: The password associated with the `administrator_login` user.
                 Needs to comply with Azure's [Password Policy](https://msdn.microsoft.com/library/ms161959.aspx)
-            required: false
-            policy: ''
+                 # AC-2 (7) An Azure Active Directory adminstrator must be provisionsed for SQL servers
+            required: true #was fales
+            policy: ''  #what goes here?
             notes: ''
         connection_policy:
             description: The connection policy the server will use. Possible values
