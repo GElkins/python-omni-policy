@@ -23,11 +23,12 @@ azurerm_disk_encryption_set:
             required: false
             policy: ''
             notes: ''
+        # Encryption at rest with CMK
         key_vault_key_id:
             description: Specifies the URL to a Key Vault Key (either from a Key Vault
                 Key, or the Key URL for the Key Vault Secret).
-            required: false
-            policy: ''
+            required: true #wass false
+            policy: ''  #example key_vault_key_id != null
             notes:
             - -> **NOTE** Access to the KeyVault must be granted for this Disk Encryption
                 Set, if you want to further use this Disk Encryption Set in a Managed

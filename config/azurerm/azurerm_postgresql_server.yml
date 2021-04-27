@@ -97,11 +97,12 @@ azurerm_postgresql_server:
             required: false
             policy: ''
             notes: ''
+        #Encryption at rest
         infrastructure_encryption_enabled:
             description: Whether or not infrastructure is encrypted for this server.
                 Defaults to `false`.
-            required: false
-            policy: ''
+            required: true #was false
+            policy: 'true' #was blank ( '' )
             notes: ''
         public_network_access_enabled:
             description: Whether or not public network access is allowed for this

@@ -30,10 +30,11 @@ azurerm_kusto_cluster:
             required: false
             policy: ''
             notes: ''
+        # enforce disk encyrption
         enable_disk_encryption:
             description: Specifies if the cluster's disks are encrypted.
-            required: false
-            policy: ''
+            required: true #was false
+            policy: 'true'  #was blank ( '' )
             notes: ''
         enable_streaming_ingest:
             description: Specifies if the streaming ingest is enabled.

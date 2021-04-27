@@ -47,8 +47,8 @@ azurerm_managed_disk:
         disk_encryption_set_id:
             description: The ID of a Disk Encryption Set which should be used to encrypt
                 this Managed Disk.
-            required: false
-            policy: ''
+            required: true #was false
+            policy: '' eample disk_encryption_set_id != null
             notes:
             - '-> '
             - ' The Disk Encryption Set must have the `Reader` Role Assignment scoped
@@ -123,22 +123,24 @@ azurerm_managed_disk:
             notes:
             - '-> **Note**: Availability Zones are [only supported in select regions
                 at this time](https://docs.microsoft.com/en-us/azure/availability-zones/az-overview).'
+       #disk encryption
         secret_url:
             description: The URL to the Key Vault Secret used as the Disk Encryption
                 Key. This can be found as `id` on the `azurerm_key_vault_secret` resource.
-            required: false
-            policy: ''
+            required: true #was false
+            policy: '' #example secret_url != null
             notes: ''
         source_vault_id:
             description: The ID of the source Key Vault.
             required: false
             policy: ''
             notes: ''
+        #disk encryption
         enabled:
             description: Is Encryption enabled on this Managed Disk? Changing this
                 forces a new resource to be created.
-            required: false
-            policy: ''
+            required: true #was false
+            policy: 'true'
             notes: ''
         disk_encryption_key:
             description: A `disk_encryption_key` block as defined above.
